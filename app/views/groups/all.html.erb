@@ -1,0 +1,27 @@
+<h1>All Boxshares</h1>
+  <a href="/groups/new">Create A Boxshare</a>
+  <%if Group.count > 0%>
+    <% @groups.each do |group| %>
+
+        <h2>
+          <%= group.team.name%>
+        </h2>
+        <ul>
+          <% group.users.each do |user| %>
+            <li>
+              <%=user.email%>
+            </li>
+          <% end %>
+
+        </ul>
+     <%if group.users.include?(current_user)%>
+        <%= link_to 'Unjoin', (ownership_url Ownership.where(:group_id=>group.id).where(:owner_id=>current_user.id).first.id), {:method=>'delete', :class=>"btn btn-danger"} %>
+
+      <%else%>
+        <%= link_to('Join', new_ownership_url({:group_id=>group.id}),class: "btn btn-success") %>
+      <%end%>
+    <% end %>
+
+<%end%>
+<br>
+

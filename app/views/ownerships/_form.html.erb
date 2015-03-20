@@ -1,0 +1,27 @@
+<%= form_for(@ownership) do |f| %>
+  <% if @ownership.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ownership.errors.count, "error") %> prohibited this ownership from being saved:</h2>
+
+      <ul>
+      <% @ownership.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.hidden_field :owner_id, value: current_user.id %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :group_id, value: params[:group_id] %>
+  </div>
+  <div class="field">
+    <%= f.label "How many tickets do you own?" %><br>
+    <%= f.number_field :quantity %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Add to group" %>
+  </div>
+<% end %>

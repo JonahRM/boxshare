@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mascot: MyString
+  home_location: MyString
+  name: MyString
+
+two:
+  mascot: MyString
+  home_location: MyString
+  name: MyString

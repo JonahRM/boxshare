@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @specification.comment %>
+</p>
+
+<p>
+  <strong>Will use:</strong>
+  <%= @specification.will_use %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @specification.user_id %>
+</p>
+
+<p>
+  <strong>Game:</strong>
+  <%= @specification.game_id %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @specification.group_id %>
+</p>
+
+<%= link_to 'Edit', edit_specification_path(@specification) %> |
+<%= link_to 'Back', specifications_path %>

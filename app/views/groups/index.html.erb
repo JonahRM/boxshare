@@ -1,0 +1,15 @@
+<h1>Your BoxShares</h1>
+
+    <% @groups.each do |group| %>
+        <h2><%=group.team.name%></h2>
+        <ul>
+          <% group.users.each do |user| %>
+          <li> <%=user.email%></li>
+         <% end %>
+        </ul>
+       <%= link_to "View Group Plans".html_safe, group, class:"btn btn-primary" %>
+    <% end %>
+
+
+<br>
+
